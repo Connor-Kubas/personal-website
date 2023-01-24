@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    background-color: rgb(24, 17, 29);
 }
 
 * {
@@ -17,11 +17,17 @@ img {
 .img-icon {
     width: 50px;
     height: 50px;
+    /* background-color: blue; */
 }
 
 .github {
     background-color: #9b59b6;
     border-radius: 0px 0px 0px 15px;
+    /* transition: all .5s ease-in-out;  */
+}
+
+.github:hover {
+    /* transform: scale(2); */
 }
 
 .linkedin {
@@ -74,6 +80,7 @@ img {
 }
 
 .center {
+    margin-top: -4%;
     display: flex;
     justify-content: center;
     align-items: center;
