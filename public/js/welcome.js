@@ -1,54 +1,7 @@
 const introduction = document.getElementById('introduction');
 
-const block = document.getElementById('github');
-const blockWidth = block.offsetWidth;
-var blockWidthExpanded = 0;
-
-const banner = document.getElementById('banner');
-const bannerWidth = banner.offsetWidth;
-
 // fadeIn(introduction);
 // slideIn(introduction);
-
-block.addEventListener("mouseover", (event) => {
-    expand(block);
-});
-
-block.addEventListener("mouseleave", (event) => {
-    // shrink(block);
-});
-
-async function expand(element) {
-    // Try to make so that when you hover over an icon the container div gets bigger
-    // document.getElementById('banner').position.width += '5%';
-    // const width = element.offsetWidth;
-    // const widthExpanded = width + 300;
-    // if (element.offsetWidth <= width) {
-    //     for (let i = 0; i <= widthExpanded; i+= 10) {
-    //         element.style.width = width + i + "px";
-    //         await sleep(1);
-    //     }
-    // } 
-    banner.style.width = (bannerWidth + 100) + 'px';
-    // if (element.offsetWidth == blockWidth) {
-        console.log('yup');
-        for (let i = 0; i < 200; i += 10) {
-            element.style.width = (blockWidth + i) + 'px';
-            await sleep(1);
-        }
-    // }
-    blockWidthExpanded = element.offsetWidth;
-}
-
-async function shrink(element) {
-    console.log(blockWidth + ' ' + blockWidthExpanded);
-    for (let i = blockWidthExpanded; i > blockWidth; i-= 10) {
-        console.log(i);
-        element.style.width = (blockWidth + i) + "px";
-        await sleep(1);
-    }
-    element.style.width = blockWidth;
-}
 
 async function fadeIn(element)
 {
@@ -73,4 +26,17 @@ async function slideIn(element)
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function openContact() {
+    document.getElementById('contact').style.display = "flex";
+    document.getElementById('introduction').style.filter = 'blur(10px)';
+    document.getElementById('footer').style.filter = 'blur(10px)';
+    // document.getElementById('contact').style.filter = 'blur(0px)';
+}
+
+function closeContact() {
+    document.getElementById('contact').style.display = "none";
+    document.getElementById('introduction').style.filter = 'blur(0px)';
+    document.getElementById('footer').style.filter = 'blur(0px)';
 }

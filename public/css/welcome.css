@@ -10,57 +10,98 @@ body {
     
 }
 
-img {
-    border:0;
+.projects {
+    background-color: rgb(54, 0, 0);
+    max-width: 100%;
+    height: 100vh;
+    /* margin-top: 20vh; */
+}
+
+html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: scroll; 
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+::selection {
+    background: #c9b64f; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+    background: #c9b64f; /* Gecko Browsers */
+}
+
+footer {
+    width: 20%;
+    margin-bottom: 2%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top:auto;
+    min-height: 10vh;
+    position:fixed;
+    bottom:0;
+}
+
+.main {
+    min-height:90vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow:1;
 }
 
 .img-icon {
     width: 50px;
     height: 50px;
-    /* background-color: blue; */
-}
-
-.github {
-    background-color: #9b59b6;
-    border-radius: 0px 0px 0px 15px;
-    /* transition: all .5s ease-in-out;  */
-}
-
-.github:hover {
-    /* transform: scale(2); */
-}
-
-.linkedin {
-    background-color: #0077b7;
-}
-
-.contact {
-    background-color: rgb(18, 184, 115);
-}
-
-.resume {
-    background-color: rgb(255, 119, 119);
-    border-radius: 0px 0px 15px 0px;
 }
 
 .icon {
-    justify-content: center;
-    align-items: center;
     display: flex;
-    text-align: center;
-    /* background-color: red; */
-    width:25%;
-    height:100%;
+    flex-direction: row;
+    transition: all .2s ease-in-out; 
+}
+
+.icon:hover { 
+    transform: scale(1.4); 
+    cursor: pointer;
+}
+
+.contact {
+    display: none;
+    position:absolute;
+    background-color: rgb(61, 44, 71);
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 0.7em;
+    width:15%;
+    height:40%;
+    border: 5px solid black;
+}
+
+.img-contact {
+    margin-left:10%;
+    width: 45px;
+    height: 45px;
 }
 
 .container {
     display:flex;
     flex-direction: column;
+    flex: 1;
     height: 100vh;
     width:100vw;
     justify-content: space-between;
     align-items: center;
+    
+    /* filter: blur(8px); */
 }
+
+
 
 .introduction {
     width:max-content;
@@ -77,13 +118,6 @@ img {
     align-items: center;
     justify-content: center;
     justify-content: space-around;
-}
-
-.center {
-    margin-top: -4%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 p {
